@@ -21,6 +21,9 @@ Script Bash che interroga il database di **Dolibarr** e invia una email di aller
 
 ## Installazione
 
+> Nota: le credenziali mostrate nello script sono di esempio. Sostituirle con quelle reali del proprio database Dolibarr.
+
+
 Clona il repository:
 
 ```bash
