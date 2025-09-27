@@ -1,5 +1,8 @@
 # Dolibarr Stock Alert
 
+![License](https://img.shields.io/badge/License-GPL%20v2-blue)
+![Bash](https://img.shields.io/badge/Script-Bash-orange)
+
 Script Bash che interroga il database di **Dolibarr** e invia una email di allerta quando uno o più prodotti scendono sotto la scorta minima configurata.
 
 ## Funzionalità
