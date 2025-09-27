@@ -76,6 +76,13 @@ Aggiungi la riga:
 ```
 
 ---
+## Donazioni
+
+Se vuoi supportare lo sviluppo di Dolibarr Stock Alert, puoi fare una donazione tramite PayPal:
+
+[Click qui per donare](https://www.paypal.com/donate/?hosted_button_id=VPSS3AQBPAVAS)
+
+---
 
 ## Dolibarr Stock Alert (English)
 
@@ -166,3 +173,9 @@ Contributions are welcome!
 1. Fork the repository
 2. Make your changes
 3. Submit a pull request
+
+## Donations
+
+If you want to support the development of Dolibarr Stock Alert, you can make a donation via PayPal:
+
+[Click here to donate](https://www.paypal.com/donate/?hosted_button_id=VPSS3AQBPAVAS)
