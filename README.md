@@ -26,6 +26,18 @@ Bash script che interroga il database di **Dolibarr** e invia una email di aller
 
 ---
 
+## Requisiti Modulo Dolibarr
+
+Per usare questo script è necessario che il modulo **Prodotti/Stock** (Products/Stock) sia attivo in Dolibarr.  
+Lo script legge i dati dei prodotti e dello stock dai seguenti moduli/dati:
+
+- Prodotti (`llx_product`)  
+- Magazzini/Stock (`llx_product_stock`)  
+
+Assicurati che i prodotti abbiano impostata la **soglia minima** (`Seuil stock alerte`) per ricevere le notifiche.
+
+---
+
 ## Installazione
 
 > Nota: le credenziali mostrate nello script sono di esempio. Sostituirle con quelle reali del proprio database Dolibarr.
@@ -105,6 +117,18 @@ Bash script that queries the **Dolibarr** database and sends an alert email when
 * mailutils or postfix/sendmail for sending emails
 * Access to the Dolibarr database
 * Bash shell available on the server
+
+---
+
+## Dolibarr Module Requirements
+
+To use this script, the **Products/Stock** module must be active in Dolibarr.  
+The script reads product and stock data from the following tables:
+
+- Products (`llx_product`)  
+- Warehouses/Stock (`llx_product_stock`)  
+
+Make sure products have the **minimum stock threshold** (`Seuil stock alerte`) set to receive alerts.
 
 ---
 
