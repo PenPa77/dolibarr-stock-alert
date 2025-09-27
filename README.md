@@ -2,14 +2,17 @@
 
 ![License](https://img.shields.io/badge/License-GPL%20v2-blue)
 ![Bash](https://img.shields.io/badge/Script-Bash-orange)
+![Cronjob](https://img.shields.io/badge/Cronjob-Scheduled-brightgreen)
 
-Script Bash che interroga il database di **Dolibarr** e invia una email di allerta quando uno o più prodotti scendono sotto la scorta minima configurata.
+Bash script che interroga il database di **Dolibarr** e invia una email di allerta quando uno o più prodotti scendono sotto la scorta minima configurata.
+
+---
 
 ## Funzionalità
 
 * Controllo automatico delle scorte minime dai prodotti Dolibarr
 * Invio email di notifica a uno o più destinatari
-* Configurabile tramite variabili esterne (`.env`)
+* Configurabile direttamente nello script (`check_stock_dolibarr.sh`)
 * Pianificazione tramite cronjob (es. due volte al giorno)
 
 ---
@@ -19,6 +22,7 @@ Script Bash che interroga il database di **Dolibarr** e invia una email di aller
 * MySQL client (`mysql`)
 * mailutils o postfix/sendmail per l'invio email
 * Accesso al database Dolibarr
+* Server con Bash disponibile
 
 ---
 
@@ -26,12 +30,14 @@ Script Bash che interroga il database di **Dolibarr** e invia una email di aller
 
 > Nota: le credenziali mostrate nello script sono di esempio. Sostituirle con quelle reali del proprio database Dolibarr.
 
-Clona il repository:
+1. Clona il repository:
 
+```bash
 git clone https://github.com/TUO-UTENTE/dolibarr-stock-alert.git
 cd dolibarr-stock-alert
+```
 
-Modifica direttamente lo script `check_stock_dolibarr.sh` con le tue credenziali:
+2. Modifica direttamente lo script `check_stock_dolibarr.sh` con le tue credenziali:
 
 ```bash
 DB_NAME="dolibarr"
@@ -39,6 +45,7 @@ DB_USER="YOUR-DB-USER"
 DB_PASS="YOUR-DB-PASSWORD"
 DB_HOST="localhost"
 MAIL_TO="DESTINATION@EMAIL.COM,DESTINATION2@EMAIL.COM"
+```
 
 ---
 
@@ -56,8 +63,7 @@ Se ci sono prodotti sotto la scorta minima, riceverai una email con l’elenco.
 
 ## Automazione con cronjob
 
-Puoi schedulare lo script per controlli automatici.
-Ad esempio, alle 11:30 e alle 19:00:
+Puoi schedulare lo script per controlli automatici. Ad esempio, alle 11:30 e alle 19:00:
 
 ```bash
 crontab -e
@@ -65,99 +71,98 @@ crontab -e
 
 Aggiungi la riga:
 
-```
+```cron
 30 11,19 * * * /percorso/dolibarr-stock-alert/check_stock_dolibarr.sh
 ```
 
 ---
 
-## Licenza
+## Dolibarr Stock Alert (English)
 
-Distribuito sotto licenza **GNU GPL v2.0** – la stessa del kernel Linux.
-Puoi modificare, ridistribuire e migliorare liberamente questo progetto.
+Bash script that queries the **Dolibarr** database and sends an alert email when one or more products fall below the configured minimum stock.
 
 ---
 
-## Contributi
+## Features
 
-Contributi e miglioramenti sono benvenuti.
-Fai una fork del repository e proponi una pull request.
+* Automatic check of Dolibarr product minimum stocks
+* Sends notification emails to one or more recipients
+* Configurable directly in the script (`check_stock_dolibarr.sh`)
+* Scheduling via cronjob (e.g., twice a day)
 
-########################
+---
 
-Dolibarr Stock Alert (English)
+## Requirements
 
-Bash script that queries the Dolibarr database and sends an alert email when one or more products fall below the configured minimum stock.
+* MySQL client (`mysql`)
+* mailutils or postfix/sendmail for sending emails
+* Access to the Dolibarr database
+* Bash shell available on the server
 
-Features
+---
 
-Automatic check of Dolibarr product minimum stocks
+## Installation
 
-Sends notification emails to one or more recipients
+> Note: credentials shown in the script are examples. Replace them with your real Dolibarr database credentials.
 
-Configurable directly in the script (check_stock_dolibarr.sh)
+1. Clone the repository:
 
-Scheduling via cronjob (e.g., twice a day)
-
-Requirements
-
-MySQL client (mysql)
-
-mailutils or postfix/sendmail for sending emails
-
-Access to the Dolibarr database
-
-Bash shell available on the server
-
-Installation
-
-⚠️ Note: credentials shown in the script are examples. Replace them with your real Dolibarr database credentials.
-
-Clone the repository:
-
+```bash
 git clone https://github.com/YOUR-USER/dolibarr-stock-alert.git
 cd dolibarr-stock-alert
+```
 
+2. Edit the script `check_stock_dolibarr.sh` with your credentials:
 
-Edit the script check_stock_dolibarr.sh with your credentials:
-
+```bash
 DB_NAME="dolibarr"
 DB_USER="YOUR-DB-USER"
 DB_PASS="YOUR-DB-PASSWORD"
 DB_HOST="localhost"
 MAIL_TO="DESTINATION@EMAIL.COM,DESTINATION2@EMAIL.COM"
+```
 
-Usage
+---
+
+## Usage
 
 Run the script manually:
 
+```bash
 bash check_stock_dolibarr.sh
-
+```
 
 If any product is below the minimum stock, you will receive an email with the list.
 
-Automate with cronjob
+---
+
+## Automate with cronjob
 
 Schedule the script for automatic checks, e.g., at 11:30 and 19:00:
 
+```bash
 crontab -e
-
+```
 
 Add the line:
 
+```cron
 30 11,19 * * * /path/to/dolibarr-stock-alert/check_stock_dolibarr.sh
+```
 
-License
+---
 
-Distributed under GNU GPL v2.0 – the same as the Linux kernel.
+## License
+
+Distributed under **GNU GPL v2.0** – the same as the Linux kernel.
 You are free to modify, redistribute, and improve this project.
 
-Contributing
+---
+
+## Contributing
 
 Contributions are welcome!
 
-Fork the repository
-
-Make your changes
-
-Submit a pull request
+1. Fork the repository
+2. Make your changes
+3. Submit a pull request
