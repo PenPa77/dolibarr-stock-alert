@@ -23,30 +23,19 @@ Script Bash che interroga il database di **Dolibarr** e invia una email di aller
 
 > Nota: le credenziali mostrate nello script sono di esempio. Sostituirle con quelle reali del proprio database Dolibarr.
 
-
 Clona il repository:
 
-```bash
 git clone https://github.com/TUO-UTENTE/dolibarr-stock-alert.git
 cd dolibarr-stock-alert
-```
 
-Copia il file di configurazione di esempio:
+Modifica direttamente lo script `check_stock_dolibarr.sh` con le tue credenziali:
 
 ```bash
-cp .env.example .env
-```
-
-Modifica `.env` con le tue credenziali:
-
-```env
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=dolibarr
-DB_USER=utente_db
-DB_PASS=password_db
-MAIL_TO="alert@azienda.it,secondaemail@azienda.it"
-```
+DB_NAME="dolibarr"
+DB_USER="YOUR-DB-USER"
+DB_PASS="YOUR-DB-PASSWORD"
+DB_HOST="localhost"
+MAIL_TO="DESTINATION@EMAIL.COM,DESTINATION2@EMAIL.COM"
 
 ---
 
@@ -55,7 +44,7 @@ MAIL_TO="alert@azienda.it,secondaemail@azienda.it"
 Esegui manualmente lo script:
 
 ```bash
-bash alert_scorte.sh
+bash check_stock_dolibarr.sh
 ```
 
 Se ci sono prodotti sotto la scorta minima, riceverai una email con l’elenco.
@@ -74,7 +63,7 @@ crontab -e
 Aggiungi la riga:
 
 ```
-30 11,19 * * * /percorso/dolibarr-stock-alert/alert_scorte.sh
+30 11,19 * * * /percorso/dolibarr-stock-alert/check_stock_dolibarr.sh
 ```
 
 ---
