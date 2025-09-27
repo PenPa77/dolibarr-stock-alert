@@ -20,5 +20,5 @@ HAVING IFNULL(SUM(ps.reel),0) < p.seuil_stock_alerte;
 ")
 if [ -n "$RESULT" ]; then
     echo -e "Attenzione, i seguenti prodotti sono sotto la scorta minima:\n\n$RESULT" \
-    | mail -s "Allerta Scorte Dolibarr" -r "alert@playnation.it" "$MAIL_TO"
+    | mail -s "Allerta Scorte Dolibarr" -r "SENDER@EMAIL.COM" "$MAIL_TO"
 fi
