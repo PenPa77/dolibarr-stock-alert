@@ -45,7 +45,7 @@ Assicurati che i prodotti abbiano impostata la **soglia minima** (`Seuil stock a
 1. Clona il repository:
 
 ```bash
-git clone https://github.com/TUO-UTENTE/dolibarr-stock-alert.git
+git clone https://github.com/killahop/dolibarr-stock-alert.git
 cd dolibarr-stock-alert
 ```
 
@@ -139,7 +139,7 @@ Make sure products have the **minimum stock threshold** (`Seuil stock alerte`) s
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USER/dolibarr-stock-alert.git
+git clone https://github.com/killahop/dolibarr-stock-alert.git
 cd dolibarr-stock-alert
 ```
 
