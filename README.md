@@ -190,6 +190,15 @@ You are free to modify, redistribute, and improve this project.
 
 ---
 
+---
+## Donations
+
+If you want to support the development of Dolibarr Stock Alert, you can make a donation via PayPal:
+
+[Click here to donate](https://www.paypal.com/donate/?hosted_button_id=VPSS3AQBPAVAS)
+
+---
+
 ## Contributing
 
 Contributions are welcome!
